@@ -1,0 +1,89 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#customers {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#customers td, customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#customers tr:hover{
+	background-color: #ddd;
+}
+
+#customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
+	padding-left:5px;
+}
+
+.btn-Add {
+  width: 150px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-Add:hover {
+  background-color: #45a049;
+}
+
+.btn-update {
+  width: 150px;
+  background-color: #1acbcb8f;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  background-color: #10e7d9;
+ 
+}
+
+.btn-delete {
+  width: 150px;
+  background-color: #ff8080;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #ff0000;
+}
+
+button a {
+	color: white;
+	text-decoration: none;
+}
+
+.table-data1{
+	text-align:right;
+}

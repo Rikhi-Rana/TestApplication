@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Test</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+	<div>
+
+		<button th:class="btn-Add">
+			<a th:href="@{/addEmployeeForm}">Add Button</a>
+		</button>
+
+	</div>
+
+	<div>
+		<table id="customers">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Address</th>
+				<th>Delete and Update</th>
+			</tr>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.id}" th:class="table-data1"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.address}"></td>
+				<td>
+					<button th:class="btn-update">
+						<a th:href="@{/showUserForm/{id}(id=${user.id})}">Update</a>
+					</button>
+					<button th:class="btn-delete">
+						<a th:href="@{/delete/{id}(id=${user.id})}"> Delete </a>
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
