@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.test.model.User;
@@ -20,7 +19,7 @@ public class TestController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@GetMapping("/")
 	public ModelAndView index(ModelAndView mav) {
 		mav = new ModelAndView("index");
@@ -29,14 +28,14 @@ public class TestController {
 		return mav;
 	}
 
-	@GetMapping(value="addEmployeeForm")
+	@GetMapping(value = "addEmployeeForm")
 	public ModelAndView addUserForm() {
 		ModelAndView mav = new ModelAndView("add-user-form");
 		User user = new User();
 		mav.addObject("user", user);
 		return mav;
 	}
-	
+
 	@PostMapping("/save")
 	public String saveUser(@ModelAttribute("user") User user) {
 		userService.save(user);
@@ -49,11 +48,11 @@ public class TestController {
 		return "redirect:/";
 	}
 
-	@GetMapping(value="showUserForm/{id}")
+	@GetMapping(value = "showUserForm/{id}")
 	public String showUpdateForm(@PathVariable("id") Long id, Model model) {
 		User user = userService.findById(id);
 		model.addAttribute("user", user);
 		return "add-user-form";
-	}	
+	}
 
 }

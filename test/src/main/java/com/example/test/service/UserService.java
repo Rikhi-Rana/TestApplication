@@ -19,27 +19,22 @@ public class UserService {
 	private UserRepository userRepository;
 
 	public List<User> findAll() {
-		logger.info("we found your list" + userRepository.findAll() );
+		logger.info("we found your list" + userRepository.findAll());
 		return userRepository.findAll();
 	}
 
 	public void deleteById(Long Id) {
-		User user = userRepository.findById(Id).orElseThrow(
-				() -> new IllegalArgumentException("Invalid user Id:" + Id));
+		User user = userRepository.findById(Id)
+				.orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + Id));
 		userRepository.delete(user);
 	}
-	
+
 	public User findById(Long id) {
-		
-		return userRepository.findById(id).orElseThrow(() -> 
-		new IllegalArgumentException("invlaid id" + id));
+
+		return userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("invlaid id" + id));
 	}
 
 	public User save(User user) {
-		return userRepository.save(user);
-	}
-
-	public User update(User user) {
 		return userRepository.save(user);
 	}
 
